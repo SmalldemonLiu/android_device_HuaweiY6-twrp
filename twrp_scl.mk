@@ -11,20 +11,19 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# Get the prebuilt list of APNs
-$(call inherit-product, vendor/omni/config/gsm.mk)
+
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/huawei/scl/device.mk)
 
 # Discard inherited values and use our own instead.
-PRODUCT_NAME := omni_scl
+PRODUCT_NAME := twrp_scl
 PRODUCT_DEVICE := scl
 PRODUCT_BRAND := huawei
 PRODUCT_MANUFACTURER := huawei
