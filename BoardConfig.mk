@@ -39,9 +39,6 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_SMP := true
 
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
-
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
@@ -103,9 +100,6 @@ TARGET_POWERHAL_VARIANT := qcom
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := true
 
-# SELinux
-include device/qcom/sepolicy/sepolicy.mk
-
 #BOARD_SEPOLICY_DIRS += \
 #    device/huawei/scl/sepolicy
 
@@ -141,4 +135,3 @@ TARGET_RECOVERY_QCOM_RTC_FIX := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TARGET_RECOVERY_DEVICE_DIRS += device/huawei/scl
 TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-
